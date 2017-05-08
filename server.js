@@ -7,9 +7,7 @@ var app = express();
 app.set('view-engine', 'html');
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res)=>{
-  res.render('index');
-});
+app.get('/', (req, res)=>res.render('index'));
 
 app.get('/:time', (req, res)=>{
   var time = req.params.time;
@@ -27,6 +25,4 @@ app.get('/:time', (req, res)=>{
   }
 });
 
-app.listen(3000, ()=>{
-  console.log("Listening on port", 3000);
-});
+app.listen(3000, ()=>console.log("Listening on port", 3000));
